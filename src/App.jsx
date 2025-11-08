@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import Header from "./components/Header";
+import RoleCards from "./components/RoleCards";
+import Workflow from "./components/Workflow";
+import Pricing from "./components/Pricing";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer className="border-t bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-gray-600">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} CareBridge — Suivi des soins pour la diaspora.
+          </p>
+          <nav className="flex items-center gap-6">
+            <a href="#roles" className="hover:text-gray-900">Rôles</a>
+            <a href="#pricing" className="hover:text-gray-900">Tarifs</a>
+            <a href="#" className="hover:text-gray-900">Se connecter</a>
+          </nav>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white via-white to-gray-50 text-gray-900">
+      <Header />
+      <RoleCards />
+      <Workflow />
+      <Pricing />
+      <Footer />
+    </div>
+  );
+}
